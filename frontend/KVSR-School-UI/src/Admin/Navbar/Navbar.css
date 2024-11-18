@@ -1,0 +1,104 @@
+/* Navbar.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: row; /* Row layout for desktop */
+}
+
+.sidebar {
+  width: 250px; /* Sidebar width for larger screens */
+  background-color: #196cc0; /* Dark blue background */
+  color: white; /* Text color */
+  height: 100vh; /* Full height */
+  padding: 20px; /* Padding around sidebar */
+  transition: width 0.3s; /* Smooth width transition */
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 60px; /* Logo size */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Space between logo and text */
+}
+
+.schoolName {
+  font-size: 1.2em; /* Font size for the school name */
+  margin: 0; /* Remove default margin */
+}
+
+.menu {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+}
+
+.menuItem {
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  padding: 10px 15px; /* Padding around links */
+  transition: background 0.3s; /* Transition for hover effect */
+}
+
+.menuItem:hover {
+  background-color: #34495e; /* Lighter color on hover */
+}
+
+.menuItem .icon {
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Adjust sidebar width for smaller screens */
+  }
+  
+  .sidebarHeader {
+    flex-direction: column; /* Stack logo and name vertically */
+    align-items: center; /* Center items */
+  }
+
+  .schoolName {
+    text-align: center; /* Center align text */
+    font-size: 1em; /* Smaller font size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContent {
+    flex-direction: column; /* Stack content vertically on mobile */
+  }
+
+  .sidebar {
+    width: 100%; /* Full width sidebar on mobile */
+    height: auto; /* Auto height for content */
+  }
+  .menuItem {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menuItem .fa-people-group {
+    margin-left: 8px; /* Adjust spacing between icons */
+  }
+  
+
+  .menuItem {
+    padding: 15px; /* Increased padding for easier tapping */
+  }
+
+  .sidebarHeader {
+    margin-bottom: 10px; /* Reduce margin for mobile */
+  }
+}

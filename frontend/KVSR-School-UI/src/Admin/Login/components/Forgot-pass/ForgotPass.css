@@ -1,0 +1,130 @@
+/* Full-screen login container */
+.min-h-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e3a5f; /* Dark blue background */
+    background-size: cover;
+    background-blend-mode: overlay;
+  }
+  
+  /* Overlay background for login */
+  .absolute {
+    position: absolute;
+    inset: 0;
+    background-image: url('/placeholder.svg?height=1080&width=1920');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2; /* Light overlay effect */
+  }
+  
+  /* Main box for the login form */
+  .z-10 {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 400px; /* Max width for the login box */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Flex container for the title */
+  .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .text-2xl {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e3a5f; 
+  }
+  
+  .bg-red-600 {
+    background-color: #e53e3e; /* Red background */
+    color: white; /* White text */
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Input fields styling */
+  .input-field {
+    width: 100%; /* Full width */
+    padding: 7px; /* Increased padding for better touch target */
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px;
+    background-color: #f9f9f9; /* Light background */
+  }
+  
+  /* Button styling */
+  .btn {
+    width: 100%; /* Full width */
+    padding: 12px;
+    background-color: #4a5568; /* Dark gray background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+  }
+  
+  /* Button hover effect */
+  .btn:hover {
+    background-color: #2d3748; /* Darker gray on hover */
+  }
+  
+  /* Forgot password link styling */
+  .text-center {
+    margin-top: 10px;
+  }
+  
+  .text-sm {
+    font-size: 14px;
+  }
+  
+  .text-blue-900 {
+    color: #1e3a5f; /* Dark blue for the link */
+  }
+  
+  .hover\:underline:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 600px) {
+    .min-h-screen {
+        padding: 10px; /* Add padding for small screens */
+    }
+  
+    .z-10 {
+        padding: 15px; /* Reduce padding on mobile */
+    }
+  
+    .text-2xl {
+        font-size: 20px; /* Smaller font size for titles on mobile */
+    }
+  
+    .bg-red-600 {
+        padding: 8px; /* Reduce padding on mobile */
+    }
+  
+    .input-field {
+        padding: 6px; /* Adjust padding for input fields */
+        font-size: 14px; /* Smaller font size for input fields */
+    }
+  
+    .btn {
+        padding: 10px; /* Adjust button padding */
+        font-size: 14px; /* Smaller font size for button */
+    }
+  }
+  

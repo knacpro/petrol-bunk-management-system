@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model MasterRole {
+  id String @id @default(uuid())
+  role String @default("")
+  createdBy String @default("ADMIN")
+  createdOn DateTime @default(now())
+  isActive Boolean @default(true)
+  masterUsers MasterUser[]
+}
+
+model MasterUser {
+  id String @id @default(uuid())
+  name String @default("")
+  email String @default("") @unique
+  password String @default("")
+  createdBy String @default("ADMIN")
+  createdOn DateTime @default(now())
+  isActive Boolean @default(true)
+  roleId String @default(uuid())
+  masterRole MasterRole @relation(fields: [roleId], references: [id])
+  menuAccess MasterMenuAccess?
+  teacher Teacher?
+}
+
+model MasterMenuAccess {
+  id String @id @default(uuid())
+  menuId String
+  roleId String
+  createdBy String @default("ADMIN")
+  createdOn DateTime @default(now())
+  isActive Boolean @default(true)
+  masterUserId String @unique
+  masterUser MasterUser @relation(fields: [masterUserId], references: [id])
+  masterMenuId String @unique
+  masterMenu MasterMenu @relation(fields: [masterMenuId], references: [id])
+}
+
+model MasterMenu {
+  id String @id @default(uuid())
+  menuName String @default("")
+  createdBy String @default("ADMIN")
+  createdOn DateTime @default(now())
+  isActive Boolean @default(true)
+  menuAccess MasterMenuAccess?
+}
+
+model Teacher {
+  id String @id @default(uuid())  
+  name String @default("")
+  email String @default("") @unique
+  password String @default("")
+  mobileNumber String @default("")
+  aadharNumber String @default("")
+  dob DateTime?
+  createdBy String @default("ADMIN")
+  createdOn DateTime @default(now())
+  isActive Boolean @default(true)
+  masterUserId String @unique @default(uuid())
+  masterUser MasterUser @relation(fields: [masterUserId], references: [id])
+}

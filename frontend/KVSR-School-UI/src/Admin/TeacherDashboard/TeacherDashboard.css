@@ -1,0 +1,111 @@
+/* TeacherDashboard.css */
+
+.dashboard {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #b9cce0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h2 {
+    font-size: 2rem;
+    color: #4c699a;
+    margin-bottom: 20px;
+}
+
+/* Search bar */
+.search-bar {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border: 1px solid #a1bcd8;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar:focus {
+    border-color: #3182ce;
+}
+
+/* Table styling */
+.teacher-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.teacher-table th, .teacher-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+    color: #d3dae3;
+}
+
+.teacher-table th {
+    background-color: #0c2c4c;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.teacher-table tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Buttons */
+.btn {
+    background-color: #3182ce;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2b6cb0;
+}
+
+/* Back link */
+.text-blue-900 {
+    color: #2b6cb0;
+    font-size: 0.875rem;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.text-blue-900:hover {
+    text-decoration: underline;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 170px;
+    }
+
+    .btn {
+        align-self: flex-start;
+    }
+
+    .text-blue-900 {
+        margin-top: 30px;
+        align-self: flex-end;
+    }
+}

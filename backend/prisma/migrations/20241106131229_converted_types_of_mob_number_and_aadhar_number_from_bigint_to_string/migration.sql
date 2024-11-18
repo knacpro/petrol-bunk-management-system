@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "Teacher" ALTER COLUMN "mobileNumber" SET DEFAULT '',
+ALTER COLUMN "mobileNumber" SET DATA TYPE TEXT,
+ALTER COLUMN "aadharNumber" SET DEFAULT '',
+ALTER COLUMN "aadharNumber" SET DATA TYPE TEXT;
