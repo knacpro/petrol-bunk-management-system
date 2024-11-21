@@ -39,3 +39,13 @@ model SalaryManagement {
   isActive    Boolean    @default(true)
   employee    Employee   @relation(fields: [employeeId], references: [id])
 }
+
+model Expenditures {
+  id String @id @default(uuid())
+  name String @default("")
+  amount String @default("")
+  description String @default("")
+  createdBy String @default("ADMIN")
+  createdOn DateTime @default(now())
+  isActive Boolean @default(true)
+}
