@@ -17,13 +17,25 @@ model Admin {
 }
 
 model Employee {
-  id String @id @default(uuid())  
-  name String @default("")
-  mobileNumber String @default("") @unique
-  aadharNumber String @default("")
-  dob DateTime?
-  salary String @default("")
-  createdBy String @default("ADMIN")
-  createdOn DateTime @default(now())
-  isActive Boolean @default(true)
+  id               String            @id @default(uuid())
+  name             String            @default("")
+  mobileNumber     String            @default("") @unique
+  aadharNumber     String            @default("")
+  dob              DateTime?
+  salary           String            @default("")
+  presentDays      String     @default("")
+  createdBy        String            @default("ADMIN")
+  createdOn        DateTime          @default(now())
+  isActive         Boolean           @default(true)
+
+  salaryManagement SalaryManagement?
+}
+
+model SalaryManagement {
+  id          String     @id @default(uuid())
+  employeeId  String     @unique
+  name        String     @default("")
+  updatedSalary String   @default("")
+  isActive    Boolean    @default(true)
+  employee    Employee   @relation(fields: [employeeId], references: [id])
 }
